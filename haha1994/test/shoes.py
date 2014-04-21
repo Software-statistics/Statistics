@@ -22,9 +22,8 @@ def show_something():
         
 
         data = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort})])).read())
-#        print data
-        for single in data:
-                print single['ASIN']
+#        for single in data:
+#                print single['ASIN']
         return data
 
 
@@ -34,7 +33,6 @@ if __name__ == '__main__':
         price_list=[]
         date_list=[]
 
-        print data[0]
         
         for offer in data[0]['offer']:
                 try:
@@ -44,9 +42,6 @@ if __name__ == '__main__':
   
                 except:
                         print 'out of range'
-
-        print len(date_list)
-        print len(price_list)
 
         plt.plot(date_list, price_list, 'o--')
         plt.gcf().autofmt_xdate()   #自动调整日期显示的格式

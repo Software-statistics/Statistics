@@ -23,24 +23,31 @@ def millions(x, pos):
     'The two args are the value and tick position'
     return '%1.1f' % (x)
 
+def analyse(a):
+        m = a['1'] + 2.0 * a['2'] + 3.0 * a['3'] + 4.0 * a['4'] + 5.0 * a['5']
+        n = a['1'] + a['2'] + a['3'] + a['4'] + a['5']
+        if(n==0):
+            return 0
+        return m/n
+
 
 if __name__ == '__main__':
         data = show_something()
 
-        comment_count_list=[]
+        star_count_list=[]
         goods_list=[]
         
 
         for goods in data:
-                comment_count_list.append(goods['stats_info']['review_count'])
+                star_count_list.append(analyse(goods['stats_info']['star_info']))
                 goods_list.append(goods['ASIN'])
         	
 """
         print goods_list
-        print comment_count_list
+        print star_count_list
 
         print len(goods_list)
-        print len(comment_count_list)
+        print len(star_count_list)
 """
 
         x = np.arange(len(goods_list))
@@ -50,7 +57,7 @@ if __name__ == '__main__':
 
         fig, ax = plt.subplots()
         ax.yaxis.set_major_formatter(formatter)
-        plt.bar(x, comment_count_list)
+        plt.bar(x, star_count_list)
         plt.xticks( x + 0.5,  goods_list)
 
     
