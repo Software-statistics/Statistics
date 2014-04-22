@@ -35,15 +35,13 @@ if __name__ == '__main__':
                 comment_count_list.append(goods['stats_info']['review_count'])
                 goods_list.append(goods['ASIN'])
         	
-"""
+
         print goods_list
         print comment_count_list
 
         print len(goods_list)
         print len(comment_count_list)
-"""
-
-        x = np.arange(len(goods_list))
+     x = np.arange(len(goods_list))
 
 
         formatter = FuncFormatter(millions)

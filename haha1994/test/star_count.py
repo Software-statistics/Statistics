@@ -42,13 +42,13 @@ if __name__ == '__main__':
                 star_count_list.append(analyse(goods['stats_info']['star_info']))
                 goods_list.append(goods['ASIN'])
         	
-"""
+
         print goods_list
         print star_count_list
 
         print len(goods_list)
         print len(star_count_list)
-"""
+
 
         x = np.arange(len(goods_list))
 
