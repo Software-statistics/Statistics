@@ -41,7 +41,8 @@ if __name__ == '__main__':
 
         print len(goods_list)
         print len(comment_count_list)
-     x = np.arange(len(goods_list))
+
+        x = np.arange(len(goods_list))
 
 
         formatter = FuncFormatter(millions)
