@@ -41,10 +41,6 @@ if __name__ == '__main__':
 
         print len(goods_list)
         print len(comment_count_list)
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
 
         x = np.arange(len(goods_list))
 
