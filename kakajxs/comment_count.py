@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*-
 
 import urllib
+from datetime import datetime
 import simplejson as json
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
@@ -36,24 +37,43 @@ if __name__ == '__main__':
                 goods_list.append(goods['ASIN'])
                 review_list.append(goods['review'])
 
-        print review_list
+        publishTime_list=[]
 
+        for every in review_list[12]:
+                publishTime_list.append(every['publishTime'])
+        print datetime.strptime(publishTime_list[0], 
+                                           '%Y-%m-%d %H:%M:%S').strftime('%Y-%m')
+
+        publishTimeMonth_list=[0 for i in range(12)]
+
+        for every in publishTime_list:
+                if(int(datetime.strptime(every, 
+                                           '%Y-%m-%d %H:%M:%S').strftime('%Y'))==2013):
+                        publishTimeMonth_list[int(datetime.strptime(every, 
+                                           '%Y-%m-%d %H:%M:%S').strftime('%m'))-1]+=1
+
+        print publishTimeMonth_list
+        
         #print goods_list
         #print comment_count_list
 
         #print len(goods_list)
         #print len(comment_count_list)
 
-        x = np.arange(len(goods_list))
+##        x = np.arange(len(goods_list))
+##
+##
+##        formatter = FuncFormatter(millions)
+##
+##        fig, ax = plt.subplots()
+##        ax.yaxis.set_major_formatter(formatter)
+##        plt.bar(x, comment_count_list)
+##        plt.xticks( x + 0.5,  goods_list)
 
-
-        formatter = FuncFormatter(millions)
-
-        fig, ax = plt.subplots()
-        ax.yaxis.set_major_formatter(formatter)
-        plt.bar(x, comment_count_list)
-        plt.xticks( x + 0.5,  goods_list)
-
+        plt.plot([1,2,3,4,5,6,7,8,9,10,11,12], publishTimeMonth_list, 'o--')
+        plt.gcf().autofmt_xdate()   #自动调整日期显示的格式
+        plt.xlabel('month')
+        plt.ylabel('number')
     
         plt.show()
 
