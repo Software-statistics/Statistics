@@ -35,7 +35,13 @@ def get_category_all(sort):
         data = []
         
         for i in range(0,int(n/20)):
-        	print i
         	data.append(get_category_data(sort,i))
        
+        return data
+
+# 得到sort分类下field下的数据（第一页）
+def get_commodity_field(sort,field):
+        all_c = 'api/commodity/'
+
+        data = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort ,'field':field})])).read())
         return data

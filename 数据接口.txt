@@ -1,0 +1,23 @@
+重新包装的数据接口
+
+定义在data.py中
+
+1.get_category_data(sort, n)
+	能获取sort分类下第n个数据所在页
+	若超出该分类下数据上限，返回为一个空的json
+
+2.get_commodity_data(asin)
+	能获取特定商品编码数据
+	若该编号商品不存在，返回值为None
+	
+3.get_category_count(sort)
+	得到sort分类下商品的数量
+	若该分类不存在，返回值为0
+	
+4.get_category_all(sort)
+	得到sort分类下所有数据
+	得到的数据格式为json的list，每个json为一页数据，即20个商品
+	
+5.get_commodity_field(sort,field)
+	得到sort分类下field下的数据（第一页）
+	
