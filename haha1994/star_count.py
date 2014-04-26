@@ -7,7 +7,7 @@ from data import get_category_count
 import matplotlib.pyplot as plt
 import numpy as np
 
-# sortn
+# sortn
 def starcount(sort, n):
         data = get_category_data(sort,n)
 
@@ -20,7 +20,7 @@ def starcount(sort, n):
         
         show(b)
    
-# asin     
+# asin     
 def starcount0(asin):
         data = get_commodity_data(asin)
 
@@ -33,7 +33,7 @@ def starcount0(asin):
 
         show(b)
 
-# sort
+# sort
 def starcountall(sort):
         data = get_category_all(sort)
         
@@ -47,12 +47,11 @@ def starcountall(sort):
         
         for single in data:
         	for i in range(0,19):
-        		star_count_list.append(single[i]['stats_info']['avg_info'])
-        	
-        	
-        print len(star_count_list)
-        
-        print star_count_list
+        		try:
+        			star_count_list.append(single[i]['stats_info']['avg_info'])
+        		except:
+        			pass
+
         for each in star_count_list:
         	if(float(each) <= 1 ):
         		a += 1
@@ -75,16 +74,19 @@ def starcountall(sort):
         
         # Set aspect ratio to be equal so that pie is drawn as a circle.
         
+        plt.title('')
         plt.axis('equal')
         plt.show()
 
+# 
 def show(b):
         x = np.arange(5)
         a = [1,2,3,4,5]
 
-        plt.bar(x, b)
+        plt.bar(x, b,color = 'red')
         plt.xticks( x + 0.4,  a)
         plt.xlabel('star')
         plt.ylabel('count')
+        plt.title('')
 
         plt.show()
