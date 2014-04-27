@@ -23,7 +23,7 @@ if __name__ == '__main__':
         date_list=[]
         #print data[0]
         
-        for offer in data[0]['offer']:      
+        for offer in data[5]['offer']:      
                 for info in offer['info']:
                         try:
                                 date_list.append(datetime.strptime(info['timestamp'], 
