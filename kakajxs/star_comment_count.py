@@ -14,10 +14,6 @@ def show_something():
         all_c = 'api/commodity/'
         sort = 'Shoes>Boys>Outdoor'
         data = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort,'page':1})])).read())
-        #data2 = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort,'page':2})])).read())
-        #data3 = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort,'page':3})])).read())
-        #data4 = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort,'page':4})])).read())
-        #data=data1+data2+data3+data4
         return data
 
 if __name__ == '__main__':
