@@ -27,7 +27,6 @@ while True:
     if method == 'GET':
         content = html.indexpage()
         # send message
-        print content
         conn.sendall(content)
     # if POST method request
     if method == 'POST':

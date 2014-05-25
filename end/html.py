@@ -1,5 +1,5 @@
 
-def indexpage():
+def indexpage0():
 	page='<!DOCTYPE HTML>'
 	page+='<html><head>'
 	page+='<title>software statistics</title>'
@@ -10,6 +10,29 @@ def indexpage():
 	page+='First :<input type="text" name="catalogue0">'
 	page+='Second :<input type="text" name="catalogue1">'
 	page+='Third :<input type="text" name="catalogue2">'
+	page+='<input type="submit" value="Submit">'
+	page+='</form>'
+	page+='</body>'
+	page+='</html>'
+	return page
+	
+def indexpage():
+	page='<!DOCTYPE HTML>'
+	page+='<html><head>'
+	page+='<title>software statistics</title>'
+	page+='</head>'
+	page+='<body>'
+	page+='<h1 align="center">software statistics</h1>'
+	page+='<form name="input" action="/" method="post" align="center">'
+	page+='<select name="first">'
+	page+='First :<option value="Shoes">Shoes</option>'
+	page+='</select>'
+	page+='<select name="second">'
+	page+='Second :<option value="Boys">Boys</option>'
+	page+='</select>'
+	page+='<select name="third">'
+	page+='Third :<option value="Outdoor">Outdoor</option>'
+	page+='</select>'
 	page+='<input type="submit" value="Submit">'
 	page+='</form>'
 	page+='</body>'
