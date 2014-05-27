@@ -35,7 +35,7 @@ while True:
         entry = form[idx:]               # Main content of the request
 
         value = entry[-1].split('=')[-1]
-        content = html.head() + html.body('nothing') + html.foot()
+        content = html.head() + html.body0('B003YUC4YI') + html.foot()
         conn.sendall(content)
         ######
         # More operations, such as put the form into database
