@@ -4,26 +4,16 @@ import urllib
 import simplejson as json
 import matplotlib.pyplot as plt
 from datetime import datetime
+from data import get_commodity_data
 
-REQUEST_URL = 'http://112.124.1.3:8004'
+def price(asin):
 
-
-def show_something():
-
-        target_url='http://112.124.1.3:8004/api/commodity?category_name=Shoes>Boys>Outdoor&page=2'
-
-        data = json.loads(urllib.urlopen(target_url).read())
-        return data
-
-
-if __name__ == '__main__':
-        data = show_something()
-
+        data = get_commodity_data(asin)
         price_list=[]
         date_list=[]
-        #print data[0]
+        print data
         
-        for offer in data[5]['offer']:      
+        for offer in data['offer']:      
                 for info in offer['info']:
                         try:
                                 date_list.append(datetime.strptime(info['timestamp'], 
@@ -31,8 +21,10 @@ if __name__ == '__main__':
                                 price_list.append(info['price'])
                         except:
                                 pass
-        print date_list
-        print price_list
+        show(price_list,date_list)
+
+def show(price_list,date_list):
+        
         plt.plot(date_list, price_list, 'o-')
         plt.gcf().autofmt_xdate()   #自动调整日期显示的格式
         plt.xlabel('date')
