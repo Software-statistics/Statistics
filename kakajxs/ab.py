@@ -3,7 +3,7 @@
 
 import socket
 import html
-import singlecomment
+import singlestar
 
 # Address
 HOST = ''
@@ -36,7 +36,7 @@ while True:
         entry = form[idx:]               # Main content of the request
 
         value = entry[-1].split('=')[-1]
-        content = html.head() + html.body(singlecomment.highchart('B003YUC4YI')) + html.foot()
+        content = html.head() + html.body(singlestar.highchart('B003YUC4YI')) + html.foot()
         conn.sendall(content)
         ######
         # More operations, such as put the form into database
