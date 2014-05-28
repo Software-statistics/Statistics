@@ -49,6 +49,7 @@ def highchart(asin):
         result = price(asin)
         str_date=result.split('/')[0]
         str_price=result.split('/')[1]
+        str_asin=asin
         #print str_date
         #print str_price
         content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
@@ -61,6 +62,9 @@ def highchart(asin):
         content+='''x: -20'''
         content+='''},'''
         content+='''xAxis: {'''
+        content+='''title:{'''
+        content+='''text:'Date' '''
+        content+='''},'''
         content+='''categories: [' '''+str_date+''' ']'''
         content+='''},'''
         content+='''yAxis: {'''
@@ -75,6 +79,7 @@ def highchart(asin):
         content+='''borderWidth: 0'''
         content+='''},'''
         content+='''series: [{'''
+        content+='''name:' '''+str_asin+"',"
         content+='''data: ['''+str_price+''']'''
         content+='''}]'''
         content+='''});'''
