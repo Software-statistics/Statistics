@@ -3,11 +3,11 @@
 
 import socket
 import html
-import singleprice
+import singlecomment
 
 # Address
 HOST = ''
-PORT = 8007
+PORT = 8006
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -36,7 +36,7 @@ while True:
         entry = form[idx:]               # Main content of the request
 
         value = entry[-1].split('=')[-1]
-        content = html.head() + html.body(singleprice.highchart('B003YUC4YI')) + html.foot()
+        content = html.head() + html.body(singlecomment.highchart('B003YUC4YI')) + html.foot()
         conn.sendall(content)
         ######
         # More operations, such as put the form into database

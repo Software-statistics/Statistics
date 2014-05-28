@@ -33,8 +33,7 @@ def highchart(asin):
         result = price(asin)
         str_month_list=result.split('/')[0]
         str_publishTimeMonth_list=result.split('/')[1]
-        #print str_date
-        #print str_price
+        str_asin=asin
         content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
         content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
         content+='''<script>'''
@@ -45,6 +44,9 @@ def highchart(asin):
         content+='''x: -20'''
         content+='''},'''
         content+='''xAxis: {'''
+        content+='''title:{'''
+        content+='''text:'Date' '''
+        content+='''},'''
         content+='''categories: [' '''+str_month_list+''' ']'''
         content+='''},'''
         content+='''yAxis: {'''
@@ -59,6 +61,7 @@ def highchart(asin):
         content+='''borderWidth: 0'''
         content+='''},'''
         content+='''series: [{'''
+        content+='''name:' '''+str_asin+"',"
         content+='''data: ['''+str_publishTimeMonth_list+''' ]'''
         content+='''}]'''
         content+='''});'''
@@ -66,12 +69,3 @@ def highchart(asin):
         content+='''</script>'''
         content+='''<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'''
         return content
-
-def show(price_list,date_list):
-        
-        plt.plot(date_list, price_list, 'o-')
-        plt.gcf().autofmt_xdate()   #自动调整日期显示的格式
-        plt.xlabel('date')
-        plt.ylabel('price')
-    
-        plt.show()
