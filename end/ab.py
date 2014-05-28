@@ -1,4 +1,3 @@
-# Written by Vamei
 # A messy HTTP server based on TCP socket 
 
 import socket
