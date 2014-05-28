@@ -7,7 +7,7 @@ import singleprice
 
 # Address
 HOST = ''
-PORT = 8006
+PORT = 8007
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
