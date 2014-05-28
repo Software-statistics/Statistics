@@ -7,7 +7,7 @@ import singleprice
 
 # Address
 HOST = ''
-PORT = 8006
+PORT = 8000
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -44,10 +44,12 @@ while True:
             print third
         except:
             pass
-        #content = html.head() + html.body0('B003YUC4YI') + html.foot()
+        html.addtable(singleprice.highchart('B003YUC4YI'))
+        content = html.head() + html.body0('B003YUC4YI') + html.foot()
 
         value = entry[-1].split('=')[-1]
-        content = html.head() + html.body(singleprice.highchart('B003YUC4YI')) + html.foot()
+        
+        #content = html.head() + html.body(singleprice.highchart('B003YUC4YI')) + html.foot()
         conn.sendall(content)
         ######
         # More operations, such as put the form into database
