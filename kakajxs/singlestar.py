@@ -23,23 +23,23 @@ def price(asin):
                 if(int(datetime.strptime(publishTime_list[i], 
                                            '%Y-%m-%d %H:%M:%S').strftime('%Y'))==2013):
                         starMonth_list[int(datetime.strptime(publishTime_list[i], 
-                                           '%Y-%m-%d %H:%M:%S').strftime('%m'))-1]+=float(star_list[i])
-                        publishTimeMonth_list[int(datetime.strptime(every, 
+                                           '%Y-%m-%d %H:%M:%S').strftime('%m'))-1]+=float(star_list[i].split(' ')[0])
+                        publishTimeMonth_list[int(datetime.strptime(publishTime_list[i], 
                                            '%Y-%m-%d %H:%M:%S').strftime('%m'))-1]+=1
-        for i in range(0,number):
-                starMonth_list[i]=starMonth_list[i]/publishTimeMonth_list[i]
+        for i in range(0,len(starMonth_list)):
+                starMonth_list[i-1]=starMonth_list[i-1]/publishTimeMonth_list[i-1]
 
 
         mouth= [1,2,3,4,5,6,7,8,9,10,11,12];                      
         str_starMonth_list = ",".join(str(item) for item in starMonth_list)
         str_month_list = "','".join(str(item) for item in mouth)
-        result=str_month_list+'/'+str_month_list
+        result=str_month_list+'/'+str_starMonth_list
         return result
 
 def highchart(asin):
         result = price(asin)
         str_month_list=result.split('/')[0]
-        str_month_list=result.split('/')[1]
+        str_starMonth_list=result.split('/')[1]
         str_asin=asin
         content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
         content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
@@ -69,7 +69,7 @@ def highchart(asin):
         content+='''},'''
         content+='''series: [{'''
         content+='''name:' '''+str_asin+"',"
-        content+='''data: ['''+str_month_list+''' ]'''
+        content+='''data: ['''+str_starMonth_list+''' ]'''
         content+='''}]'''
         content+='''});'''
         content+='''});'''
