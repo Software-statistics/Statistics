@@ -1,5 +1,7 @@
 from data import get_commodity_data
 
+table = []
+
 def indexpage0():
 	page='<!DOCTYPE HTML>'
 	page+='<html><head>'
@@ -55,6 +57,7 @@ def body0(asin):
 	name = getname(asin)
 	information = getinformation(asin)
 	imgurl = getimgurl(asin)
+
 	css='<style type = "text/css" >'
 	css+='#asinimg {'
 	css+='width : 300px;'
@@ -73,15 +76,20 @@ def body0(asin):
 	body+='<tr><td>'+information+'</td></tr>'
 	body+='</table></td>'
 	body+='</tr>'
-	body+=''
+	for each in table:
+		body+='<tr>'
+		body+='<td>'+ each +'</td>'
+		body+='</tr>'
 	body+='</table>'
 	body+='</body>'
 	return css+body
+	
+def addtable(table0):
+	table.append(table0)
   
 def body(content='nothing'):
-        print content
-        body='<body>' +content+'</body>'
-        return body
+	body='<body>' +content+'</body>'
+	return body
   
 def foot():
 	foot='</html>'
