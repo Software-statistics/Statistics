@@ -1,13 +1,14 @@
-# Written by Vamei
 # A messy HTTP server based on TCP socket 
 
 import socket
 import html
 import singlestar
+import singlecomment
+
 
 # Address
 HOST = ''
-PORT = 8006
+PORT = 8000
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -35,8 +36,23 @@ while True:
         idx = form.index('')             # Find the empty line
         entry = form[idx:]               # Main content of the request
 
+        try:
+            first = entry[-1].split('=')[1].split('&')[0]
+            second = entry[-1].split('=')[2].split('&')[0]
+            third = entry[-1].split('=')[3]
+            print first
+            print second
+            print third
+        except:
+            pass
+        html.addtable(singlestar.highchart('B003YUC4YI'))
+        #html.addtable(singlecomment.highchart('B003YUC4YI'))
+        content = html.head() + html.body0('B003YUC4YI') + html.foot()
+
         value = entry[-1].split('=')[-1]
-        content = html.head() + html.body(singlestar.highchart('B003YUC4YI')) + html.foot()
+        
+
+        #content = html.head() + html.body(singleprice.highchart('B003YUC4YI')) + html.foot()
         conn.sendall(content)
         ######
         # More operations, such as put the form into database

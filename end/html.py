@@ -47,11 +47,15 @@ def indexpage():
 	return page
 
 def head():
-  head='<!DOCTYPE HTML>'
-  head+='<html><head>'
-  head+='<title>software statistics</title>'
-  head+='</head>'
-  return head
+	head='<!DOCTYPE HTML>'
+	head+='<html><head>'
+	head+='<title>software statistics</title>'
+	head+='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
+	head+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+	for each in table:
+		head+=each
+	head+='</head>'
+	return head
   
 def body0(asin):
 	name = getname(asin)
@@ -85,14 +89,15 @@ def body0(asin):
 	body+='</tr>'
 	body+='</table>'
 	body+='</tr>'
-	for each in table:
-		body+='<tr>'
-		body+='<td>'
-		body+='<div class="tables">'
-		body+=each
-		body+='</div>'
-		body+='</td>'
-		body+='</tr>'
+	body+='<tr>'
+	body+='<td>'
+	body+='<ul>'
+	body+='<li>'
+	body+='<div id="price"></div>'
+	body+='</li>'
+	body+='</ul>'
+	body+='</td>'
+	body+='</tr>'
 	body+='</table>'
 	body+='</body>'
 	return css+body

@@ -52,9 +52,9 @@ def highchart(asin):
         str_asin=asin
         #print str_date
         #print str_price
-        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content+='''<script>'''
+#        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
+#        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+        content='''<script>'''
         content+='''$(function () {'''
         content+='''$('#price').highcharts({'''
         content+='''title: {'''
