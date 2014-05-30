@@ -56,7 +56,7 @@ def highchart(asin):
         content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
         content+='''<script>'''
         content+='''$(function () {'''
-        content+='''$('#container').highcharts({'''
+        content+='''$('#price').highcharts({'''
         content+='''title: {'''
         content+='''text: 'Price Trend','''
         content+='''x: -20'''
