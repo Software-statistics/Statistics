@@ -44,6 +44,7 @@ while True:
         except:
             pass
         html.addtable(singleprice.highchart('B003YUC4YI'))
+        html.addtable(singleprice.highchart('B003YUC4YI'))
         content = html.head() + html.body0('B003YUC4YI') + html.foot()
 
         value = entry[-1].split('=')[-1]
