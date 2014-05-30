@@ -69,7 +69,7 @@ def body0(asin):
 	css+='#informations a:link{'
 	css+='text-decoration:none;'
 	css+='}'
-	css+='.tables{'
+	css+='#price{'
 	css+='height:300px;'
 	css+='width:750px;'
 	css+='}'

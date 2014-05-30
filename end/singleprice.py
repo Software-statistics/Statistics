@@ -85,7 +85,6 @@ def highchart(asin):
         content+='''});'''
         content+='''});'''
         content+='''</script>'''
-        content+='''<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'''
         return content
 
 def show(price_list,date_list):
