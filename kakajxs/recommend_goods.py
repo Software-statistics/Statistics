@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 from data import get_category_all
-from data import get_category_data
+from data import get_category_page
 
 def recommendcommodity(category):
-        data = get_category_data(category,1)
+        data1 = get_category_page(category,1)
+        data=data1
         ASIN_list=[0 for i in range(4)]
         compare_list=[0 for i in range(4)]
 
@@ -53,6 +54,8 @@ def recommendcommodity(category):
                         compare_list[3]=float(data[i]['stats_info']['review_count'])+float(data[i]['stats_info']['avg_info'])*10
                         record=i
         data.remove(data[record])
+
+        print compare_list
         return ASIN_list
 	
 def recommendprice(asin):
