@@ -54,8 +54,6 @@ def recommendcommodity(category):
                         compare_list[3]=float(data[i]['stats_info']['review_count'])+float(data[i]['stats_info']['avg_info'])*10
                         record=i
         data.remove(data[record])
-
-        print compare_list
         return ASIN_list
 	
 def recommendprice(asin):
