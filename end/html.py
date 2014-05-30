@@ -92,11 +92,9 @@ def body0(asin):
 	body+='<tr>'
 	body+='<td>'
 	body+='<ul>'
-	for each in table:
-		body+='<li>'
-		body+=each
-		body+='<div id="price"></div>'
-		body+='</li>'
+	body+='<li>'
+	body+='<div id="price"></div>'
+	body+='</li>'
 	body+='</ul>'
 	body+='</td>'
 	body+='</tr>'

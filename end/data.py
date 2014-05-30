@@ -39,5 +39,5 @@ def get_commodity_field(sort,field):
 
 # 得到sort分类下第n页的数据
 def get_category_page(sort,page):
-				data = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort ,'page':page})])).read())
-        return data
+	data = json.loads(urllib.urlopen('?'.join([('/'.join([REQUEST_URL,all_c])),urllib.urlencode({'category_name':sort ,'page':page})])).read())
+	return data
