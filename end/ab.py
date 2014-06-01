@@ -4,6 +4,7 @@ import socket
 import html
 import singleprice
 import singlecomment
+import singlestar
 
 # Address
 HOST = ''
@@ -44,10 +45,10 @@ while True:
             print third
         except:
             pass
-        #html.addtable(singleprice.highchart('B00AC8SHDW'))
+        #html.addtable(singlestar.highchart('B00AC8SHDW'))
         html.addtable(singleprice.highchart('B003YUC4YI'))
         html.addtable(singlecomment.highchart('B003YUC4YI'))
-        content = html.head() + html.body0('B003YUC4YI') + html.foot()
+        content = html.commodity('B003YUC4YI')
 
         value = entry[-1].split('=')[-1]
         
