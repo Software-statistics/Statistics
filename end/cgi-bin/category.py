@@ -1,48 +1,38 @@
-from data import get_commodity_data
+#!/usr/local/bin/python2.7
 
+import cgi
+import cgitb
+import data
+import singleprice
+import singlecomment
+import singlestar
+
+cgitb.enable()
 table = []
 	
-def indexpage():
-	page='<!DOCTYPE HTML>'
-	page+='<html><head>'
-	page+='<title>software statistics</title>'
-	page+='</head>'
-	page+='<style type = "text/css" >'
-	page+='#logo{'
-	page+='width: 960px;'
-	page+='height: 107px;'
-	page+='margin: 0 auto;'
-	page+='padding: 10px 20px 0px 20px;'
-	page+='background: url(images/img08.jpg) no-repeat left bottom;'
-	page+='}'
-	page+='</style>'
-	page+='<body>'
-	page+='<div id="logo"><h1 align="center">software statistics</h1></div>'
-	page+='<form name="input" action="/" method="post" align="center">'
-	page+='<label for="first">First :  </label>'
-	page+='<select name="first" id="first">'
-	page+='<option value="Shoes">Shoes</option>'
-	page+='</select>'
-	page+='<label for="second"> Second :  </label>'
-	page+='<select name="second" id="second">'
-	page+='<option value="Boys">Boys</option>'
-	page+='<option value="Girls">Girls</option>'
-	page+='</select>'
-	page+='<label for="third"> Third :  </label>'
-	page+='<select name="third" id="third" >'
-	page+='<option value="Outdoor">Outdoor</option>'
-	page+='</select>'
-	page+='<input type="submit" value="Submit">'
-	page+='</form>'
-	page+='</body>'
-	page+='</html>'
-	return page
-  
+def addtable(table0):
+	table.append(table0)
+	
+def getimgurl(asin='B003YUC4YI'):
+	data0 = data.get_commodity_data(asin)
+	imgurl = data0['productInfo'][0]['img']
+	return imgurl
+	
+def getinformation(asin='B003YUC4YI'):
+	data0 = data.get_commodity_data(asin)
+	information = data0['productInfo'][0]['productDescription']
+	return information
+	
+def getname(asin='B003YUC4YI'):
+	data0 = data.get_commodity_data(asin)
+	name = data0['productInfo'][0]['name']
+	return name
+
 def commodity(asin):
 	name = getname(asin)
 	information = getinformation(asin)
 	imgurl = getimgurl(asin)
-	
+
 	head='<!DOCTYPE HTML>'
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
@@ -59,7 +49,7 @@ def commodity(asin):
 	css+='#informations a:link{'
 	css+='text-decoration:none;'
 	css+='}'
-	css+='.div-inline{'
+	css+='div{'
 	css+='display:inline'
 	css+='}'
 	css+='#price{'
@@ -94,7 +84,7 @@ def commodity(asin):
 	body+='<td>'
 	body+='<ul>'
 	body+='<li>'
-	body+='<div id="price" class="div-inline"></div><div id="comment" class="div-inline"></div>'
+	body+='<div id="price"></div><div id="comment"></div>'
 	body+='</li>'
 	body+='<li>'
 	body+='<div id="star"></div>'
@@ -106,8 +96,9 @@ def commodity(asin):
 	body+='</body>'
 	body+='</html>'
 	return head+css+body
-  
+
 def commodity0(content='nothing'):
+	
 	head='<!DOCTYPE HTML>'
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
@@ -115,22 +106,13 @@ def commodity0(content='nothing'):
 	body='<body>' +content+'</body>'
 	body+='</html>'
 	return head+body
-	
-def addtable(table0):
-	table.append(table0)
-	
-def getimgurl(asin='B003YUC4YI'):
-	data = get_commodity_data(asin)
-	imgurl = data['productInfo'][0]['img']
-	return imgurl
-	
-def getinformation(asin='B003YUC4YI'):
-	data = get_commodity_data(asin)
-	information = data['productInfo'][0]['productDescription']
-	return information
-	
-def getname(asin='B003YUC4YI'):
-	data = get_commodity_data(asin)
-	print data['productInfo']
-	name = data['productInfo'][0]['name']
-	return name
+
+#addtable(singlestar.highchart('B003YUC4YI'))
+addtable(singleprice.highchart('B003YUC4YI'))
+addtable(singlecomment.highchart('B003YUC4YI'))
+print ("HTTP/1.0 200 OK")
+print ("Content-Type: text/html")
+print ("")
+print ("")
+#print ("<p>hello</p>")
+print (commodity('B003YUC4YI'))
