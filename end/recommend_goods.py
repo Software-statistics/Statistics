@@ -56,8 +56,6 @@ def recommendcommodity(category):
         data.remove(data[record])
         return ASIN_list
 	
-def recommendprice(asin):
-	return price
 
 if __name__ == '__main__':
         category='Shoes>Boys>Outdoor'

@@ -3,10 +3,12 @@
 import socket
 import html
 import singleprice
+import singlecomment
+import singlestar
 
 # Address
 HOST = ''
-PORT = 8001
+PORT = 8012
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -18,16 +20,15 @@ while True:
     conn, addr = s.accept()                    
     request    = conn.recv(1024)         # 1024 is the receiving buffer size
     method     = request.split(' ')[0]
-    src        = request.split(' ')[1]
 
     print 'Connected by', addr
     print 'Request is:', request
 
     # if GET method request
     if method == 'GET':
-        content = html.indexpage()
-        # send message
-        conn.sendall(content)
+      	content = html.indexpage()
+      # send message
+      	conn.sendall(content)
     # if POST method request
     if method == 'POST':
         form = request.split('\r\n')
@@ -43,9 +44,10 @@ while True:
             print third
         except:
             pass
-        #html.addtable(singleprice.highchart('B00AC8SHDW'))
+        #html.addtable(singlestar.highchart('B00AC8SHDW'))
         html.addtable(singleprice.highchart('B003YUC4YI'))
-        content = html.head() + html.body0('B003YUC4YI') + html.foot()
+        html.addtable(singlecomment.highchart('B003YUC4YI'))
+        content = html.commodity('B003YUC4YI')
 
         value = entry[-1].split('=')[-1]
         

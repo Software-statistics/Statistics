@@ -34,19 +34,19 @@ def highchart(asin):
         str_month_list=result.split('/')[0]
         str_publishTimeMonth_list=result.split('/')[1]
         str_asin=asin
-        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content+='''<script>'''
+#        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
+#        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+        content='''<script>'''
         content+='''$(function () {'''
         content+='''$('#comment').highcharts({'''
         content+='''chart: {'''
         content+='''type: 'column' '''
         content+='''},'''
         content+='''title: {'''
-        content+='''text: 'Monthly Average Rainfall' '''
+        content+='''text: 'Monthly comment' '''
         content+='''},'''
         content+='''subtitle: { '''
-        content+='''text: 'Source: WorldClimate.com' '''
+        content+='''text: 'Source: http://trendata.cn' '''
         content+='''},'''
         content+='''xAxis: {'''
         content+='''categories: [' '''+str_month_list+''' ']'''
@@ -78,5 +78,4 @@ def highchart(asin):
         content+='''});'''
         content+='''});'''
         content+='''</script>'''
-        content+='''<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'''
         return content

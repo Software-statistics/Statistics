@@ -1,0 +1,23 @@
+
+#informations a:hover{
+	background-color:yellow;
+}
+
+#informations a:link{
+	text-decoration:none;
+}
+
+#price{
+	height:400px;
+	width:600px;
+}
+
+#comment{
+	height:400px;
+	width:600px;
+}
+
+#star{
+	height:400px;
+	width:600px;
+}
