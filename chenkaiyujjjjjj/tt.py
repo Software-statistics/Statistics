@@ -1,9 +1,8 @@
-from data import get_category_all 
+from data import get_category_page
 
-def show(sort):
-    data=get_category_all(sort)
-    print data[0]['productInfo']
+def show(sort,page):
+    data=get_category_page(sort,page)
+    print data[1]['productInfo'][0]['productDetail'][0]['bestSellerRank']
 
 if __name__ == '__main__':
-    show('Shoes>Boys>Outdoor')
-    print ss
+    show('Shoes>Boys>Outdoor',1)
