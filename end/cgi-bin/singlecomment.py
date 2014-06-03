@@ -44,16 +44,22 @@ def highchart(asin):
         content+='''},'''
         content+='''title: {'''
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4158a033c3db892395368fd6159b9fc60444b47c
         content+='''text: 'Monthly comment' '''
         content+='''},'''
         content+='''subtitle: { '''
         content+='''text: 'Source: http://trendata.cn' '''
+<<<<<<< HEAD
 =======
         content+='''text: 'Monthly Average Comment' '''
         content+='''},'''
         content+='''subtitle: { '''
         content+='''text: 'Source: trendata.cn' '''
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> 4158a033c3db892395368fd6159b9fc60444b47c
         content+='''},'''
         content+='''xAxis: {'''
         content+='''categories: [' '''+str_month_list+''' ']'''
