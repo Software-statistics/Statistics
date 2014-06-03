@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from data import get_commodity_data
 
+#求一件商品的价格走势
+#传入一个商品的asin编码
+#返回获取价格的日期和价格
 def price(asin):
 
         data = get_commodity_data(asin)
