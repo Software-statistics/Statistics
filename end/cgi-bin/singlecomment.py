@@ -43,10 +43,17 @@ def highchart(asin):
         content+='''type: 'column' '''
         content+='''},'''
         content+='''title: {'''
-        content+='''text: 'Monthly Average Rainfall' '''
+<<<<<<< HEAD
+        content+='''text: 'Monthly comment' '''
         content+='''},'''
         content+='''subtitle: { '''
-        content+='''text: 'Source: WorldClimate.com' '''
+        content+='''text: 'Source: http://trendata.cn' '''
+=======
+        content+='''text: 'Monthly Average Comment' '''
+        content+='''},'''
+        content+='''subtitle: { '''
+        content+='''text: 'Source: trendata.cn' '''
+>>>>>>> FETCH_HEAD
         content+='''},'''
         content+='''xAxis: {'''
         content+='''categories: [' '''+str_month_list+''' ']'''

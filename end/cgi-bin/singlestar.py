@@ -27,8 +27,10 @@ def price(asin):
                         publishTimeMonth_list[int(datetime.strptime(publishTime_list[i], 
                                            '%Y-%m-%d %H:%M:%S').strftime('%m'))-1]+=1
         for i in range(0,len(starMonth_list)):
-                starMonth_list[i-1]=starMonth_list[i-1]/publishTimeMonth_list[i-1]
-
+                if(publishTimeMonth_list[i-1]!=0):
+                        starMonth_list[i-1]=starMonth_list[i-1]/publishTimeMonth_list[i-1]
+                else:
+                        starMonth_list[i-1]=float(data['stats_info']['avg_info'])
 
         mouth= [1,2,3,4,5,6,7,8,9,10,11,12];                      
         str_starMonth_list = ",".join(str(item) for item in starMonth_list)
@@ -47,7 +49,7 @@ def highchart(asin):
         content+='''$(function () {'''
         content+='''$('#star').highcharts({'''
         content+='''title: {'''
-        content+='''text: 'Price Trend','''
+        content+='''text: 'Star Trend','''
         content+='''x: -20'''
         content+='''},'''
         content+='''xAxis: {'''
@@ -58,7 +60,7 @@ def highchart(asin):
         content+='''},'''
         content+='''yAxis: {'''
         content+='''title: {'''
-        content+='''text:'Price' '''
+        content+='''text:'Star' '''
         content+='''},'''
         content+='''},'''
         content+='''legend: {'''

@@ -1,12 +1,3 @@
-
-#informations a:hover{
-	background-color:yellow;
-}
-
-#informations a:link{
-	text-decoration:none;
-}
-
 body {
 	margin: 0px;
 	padding: 0;
@@ -15,6 +6,7 @@ body {
 	font-size: 12px;
 	color: #464646;
 }
+
 h1, h2, h3 {
 	margin: 0;
 	text-transform: uppercase;
@@ -30,10 +22,6 @@ h3 { }
 
 hr { display: none; }
 
-.div-inline{
-	display:inline
-}
-
 #logo{
 	width: 960px;
 	height: 107px;
@@ -41,6 +29,7 @@ hr { display: none; }
 	padding: 10px 20px 0px 20px;
 	background: url(../images/img08.jpg) no-repeat left bottom;
 }
+
 #logo h1 {
 	margin: 0px;
 	line-height: normal;
@@ -63,15 +52,14 @@ hr { display: none; }
 	background: url(../images/img05.jpg) no-repeat left top;
 }
 
-#price{
-	height:400px;
-	width:500px;
+.pic {
+	display:inline;
+	width: 110px;
+	height: 110px;
 }
-#comment{
-	height:400px;
-	width:500px;
-}
-#star{
-	height:400px;
-	width:500px;
+
+.info {
+	display:inline;
+	width: 500px;
+	height: 110px;
 }
