@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from data import get_commodity_data
 
+# Show the star
+# Parameters:asin
+# Return the number of the star
 def getstar(asin):
 
         data = get_commodity_data(asin)

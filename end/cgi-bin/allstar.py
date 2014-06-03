@@ -8,6 +8,9 @@ import numpy as np
 from data import get_category_all
 from data import get_category_page
 
+# The number of the star between 1 to 5 of the 100 goods form a sort
+# Parameters:category
+# Return the number of the star between 1 to 5 of the 100 goods form a sort
 def allstar(category):
         data1 = get_category_page(category,1)
         data2 = get_category_page(category,2)

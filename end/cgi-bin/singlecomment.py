@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from data import get_commodity_data
 
+# The number of comments monthly statistical commodities in 2013
+# Parameters:asin
+# Return the number of comments monthly statistical commodities in 2013
 def price(asin):
 
         data = get_commodity_data(asin)
@@ -43,23 +46,10 @@ def highchart(asin):
         content+='''type: 'column' '''
         content+='''},'''
         content+='''title: {'''
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4158a033c3db892395368fd6159b9fc60444b47c
-        content+='''text: 'Monthly comment' '''
-        content+='''},'''
-        content+='''subtitle: { '''
-        content+='''text: 'Source: http://trendata.cn' '''
-<<<<<<< HEAD
-=======
         content+='''text: 'Monthly Average Comment' '''
         content+='''},'''
         content+='''subtitle: { '''
         content+='''text: 'Source: trendata.cn' '''
->>>>>>> FETCH_HEAD
-=======
->>>>>>> 4158a033c3db892395368fd6159b9fc60444b47c
         content+='''},'''
         content+='''xAxis: {'''
         content+='''categories: [' '''+str_month_list+''' ']'''

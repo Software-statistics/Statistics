@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from data import get_commodity_data
 
+# The number of star monthly statistical commodities in 2013
+# Parameters:asin
+# Return the number of star monthly statistical commodities in 2013
 def price(asin):
 
         data = get_commodity_data(asin)
