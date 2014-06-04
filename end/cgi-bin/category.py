@@ -16,6 +16,8 @@ def addtable(table0):
 def getimgurl(asin='B003YUC4YI'):
 	data0 = data.get_commodity_data(asin)
 	imgurl = data0['productInfo'][0]['img']
+	if imgurl==('/mnt/mongo/ImageData/'+first+'/'+second+'/'+third+'/'+asin+'.jpeg'):
+			imgurl='../images/404.jpg'
 	return imgurl
 	
 def getinformation(asin='B003YUC4YI'):
@@ -34,10 +36,11 @@ def getprice(asin='B003YUC4YI'):
 def category(category,i):
 	data0=data.get_category_page(category,i)
 	
+	
 	head='<!DOCTYPE HTML>'
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
-	head+='<link href="../css/category.css" rel="stylesheet" type="text/css" media="screen" />'
+	head+='<link href="../css/category.css" rel="stylesheet" type="text/css" />'
 	head+='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
 	head+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
 	for each in table:
@@ -57,12 +60,13 @@ def category(category,i):
 		name = getname(asin)
 		price = getprice(asin)
 		imgurl = getimgurl(asin)
-		body+='<div>'
-		body+='<div class="pic">'
+		
+		body+='<div style="width:650px;height:110px">'
+		body+='<div class="pic" style="width:110px;height:110px;float:left; display:inline">'
 		body+='<a href="commodity.py?asin='+asin+'"><img src="' + imgurl + '" width="100px" height="100px" /></a>'
 		body+='</div>'
-		body+='<div class="info">'
-		body+='<div>'+name+'</div>'
+		body+='<div class="info" style="width:500px;height:110px;float:left; display:inline">'
+		body+='<div style="width:500px;">'+name+'</div>'
 		body+='<div>'+str(price)+'</div>'
 		body+='</div>'
 		body+='</div>'

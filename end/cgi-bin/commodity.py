@@ -16,6 +16,8 @@ def addtable(table0):
 def getimgurl(asin='B003YUC4YI'):
 	data0 = data.get_commodity_data(asin)
 	imgurl = data0['productInfo'][0]['img']
+	if '/mnt/mongo/ImageData/' in imgurl:
+		imgurl='../images/404.jpg'
 	return imgurl
 	
 def getinformation(asin='B003YUC4YI'):

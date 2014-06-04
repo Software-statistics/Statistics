@@ -2,7 +2,22 @@
 <html>
 <head>
 	<title>software statistics</title>
-	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-sliding-menu.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-sliding-menu.js"></script>
+	<script type="text/javascript">
+
+		$(document).ready(function()
+		{
+			$('#menu').menu();
+
+		});
+
+	</script>
 </head>
 
 <body>
@@ -14,27 +29,184 @@
 	<div id="page">
 		<div id="page-bgtop">
 			<div id="content">
-				<form id="form1" name="input" action="cgi-bin/category.py" method="get" align="center">
-					<label for="first">First :  </label>
-					<select name="first" id="first">
-						<option value="Shoes">Shoes</option>
-					</select>
-					<label for="second"> Second :  </label>
-					<select name="second" id="second">
-						<option value="Boys">Boys</option>
-						<option value="Girls">Girls</option>
-					</select>
-					<label for="third"> Third :  </label>
-					<select name="third" id="third" >
-						<option value="Outdoor">Outdoor</option>
-						<option value="Slippers">Slippers</option>
-						<option value="Sneakers">Sneakers</option>
-					</select>
-					<input type="submit" value="Submit">
-				</form>
-				<div id="block"></div>
+		<section>
+			<div id="menu">
+				<ul>
+					<li>
+						<a href="#">Shoes</a>
+						<ul>
+							<li>
+								<a href="#">Boys</a>
+								<ul>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Boys&third=Outdoor">Outdoor</a>
+									</li>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Boys&third=Slippers">Slippers</a>
+									</li>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Boys&third=Sneakers">Sneakers</a>
+									</li>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Boys&third=Athletic">Athletic</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Girls</a>
+								<ul>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Girls&third=Slippers">Slippers</a>
+									</li>
+									<li>
+										<a href="cgi-bin/category.py?first=Shoes&second=Girls&third=Sneakers">Sneakers</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Men</a>
+								<ul>
+									<li>
+										<a href="#">Outdoor</a>
+									</li>
+									<li>
+										<a href="#">Sandals</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Women</a>
+								<ul>
+									<li>
+										<a href="#">Outdoor</a>
+									</li>
+									<li>
+										<a href="#">Sandals</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Albums</a>
+						<ul>
+							<li>
+								<a href="#">Get Your Wings</a>
+								<ul>
+									<li>
+										<a href="#">Train Kept A-Rollin'</a>
+									</li>
+									<li>
+										<a href="#">Same Old Song and Dance</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Hotel California</a>
+								<ul>
+									<li>
+										<a href="#">Hotel California</a>
+									</li>
+									<li>
+										<a href="#">Pretty Maids All in a Row</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Physical Graffiti</a>
+								<ul>
+									<li>
+										<a href="#">In My Time of Dying</a>
+									</li>
+									<li>
+										<a href="#">Houses of the Holy</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Songs</a>
+						<ul>
+							<li>
+								<a href="#">In My Time of Dying</a>
+							</li>
+							<li>
+								<a href="#">Houses of the Holy</a>
+							</li>
+							<li>
+								<a href="#">Hotel California</a>
+							</li>
+							<li>
+								<a href="#">Pretty Maids All in a Row</a>
+							</li>
+							<li>
+								<a href="#">Train Kept A-Rollin'</a>
+							</li>
+							<li>
+								<a href="#">Same Old Song and Dance</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Genres</a>
+						<ul>
+							<li>
+								<a href="#">Rock</a>
+								<ul>
+									<li>
+										<a href="#">Hotel California</a>
+									</li>
+									<li>
+										<a href="#">Pretty Maids All in a Row</a>
+									</li>
+									<li>
+										<a href="#">Train Kept A-Rollin'</a>
+									</li>
+									<li>
+										<a href="#">Same Old Song and Dance</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Hard rock</a>
+								<ul>
+									<li>
+										<a href="#">In My Time of Dying</a>
+									</li>
+									<li>
+										<a href="#">Houses of the Holy</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Settings</a>
+						<ul>
+							<li>
+								<a href="#">Profile</a>
+							</li>
+							<li>
+								<a href="#">Player</a>
+								<ul>
+									<li>
+										<a href="#">Volume</a>
+									</li>
+									<li>
+										<a href="#">Equalizer</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
 			</div>
 		</div>
+		
+		<div id="block"></div>
 	</div>
 	
 </body>
