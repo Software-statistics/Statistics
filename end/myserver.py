@@ -3,7 +3,7 @@ import BaseHTTPServer
 import CGIHTTPServer
 
 HOST = ''
-PORT = 8025
+PORT = 8029
 
 if __name__=='__main__':
 	server = BaseHTTPServer.HTTPServer((HOST, PORT),CGIHTTPServer.CGIHTTPRequestHandler)

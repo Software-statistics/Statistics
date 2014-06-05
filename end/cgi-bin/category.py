@@ -42,8 +42,8 @@ def category(category,i):
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
 	head+='<link href="../css/category.css" rel="stylesheet" type="text/css" />'
-	head+='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-	head+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+	head+='''<script type="text/javascript" src="http:../jquery/jquery.min.js"></script>'''
+	head+='''<script type="text/javascript" src="../highcharts/highcharts.js"></script>'''
 	for each in table:
 		head+=each
 	head+='</head>'

@@ -39,8 +39,8 @@ def commodity(asin):
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
 	head+='<link href="../css/commodity.css" rel="stylesheet" type="text/css" media="screen" />'
-	head+='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-	head+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+	head+='''<script type="text/javascript" src="../jquery/jquery.min.js"></script>'''
+	head+='''<script type="text/javascript" src="../highcharts/highcharts.js"></script>'''
 	for each in table:
 		head+=each
 	head+='</head>'
@@ -93,9 +93,9 @@ def commodity0(content='nothing'):
 	body+='</html>'
 	return head+body
 
-form=cgi.FieldStorage()
-asin=form.getvalue('asin')
-#asin='B003YUC4YI'
+#form=cgi.FieldStorage()
+#asin=form.getvalue('asin')
+asin='B003YUC4YI'
 #addtable(singlestar.highchart(asin))
 #addtable(singleprice.highchart(asin))
 #addtable(singlecomment.highchart(asin))
@@ -104,4 +104,4 @@ print ("HTTP/1.0 200 OK")
 print ("Content-Type: text/html")
 print ("")
 print ("")
-print (commodity(asin))
+print (commodity0(asin))
