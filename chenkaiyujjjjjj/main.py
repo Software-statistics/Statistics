@@ -8,4 +8,4 @@ if __name__ == '__main__':
 	#starcount('Shoes>Boys>Outdoor', 12)
         # B003YUC4YI
         #starcount0('B003YUC4YI')
-        recommentprice('B003YUC4YI')
+        recommend_price('B003YUC4YI')
