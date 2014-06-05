@@ -6,7 +6,7 @@ import data
 import singleprice
 import singlecomment
 import singlestar
-#from recommentprice import recommendprice
+import recommendprice
 
 cgitb.enable()
 table = []
@@ -32,8 +32,7 @@ def getname(asin='B003YUC4YI'):
 	return name
 	
 def getprice(asin='B003YUC4YI'):
-	#return recommendprice(asin)[1]
-	return 100
+	return recommendprice.recommend_price(asin)[1]
 	
 def category(category,i):
 	data0=data.get_category_page(category,i)
