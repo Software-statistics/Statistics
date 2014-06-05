@@ -1,6 +1,6 @@
 from data import get_commodity_data
 
-def recommentprice(asin):
+def recommend_price(asin):
     price_list=[]
     result=[]
     r=0.0
@@ -24,7 +24,5 @@ def recommentprice(asin):
     #print average_price
     #print lastest_price
     #print lowest_price
-    print result
+    return result
 
-if __name__ == '__main__':
-    recommentprice('B003YUC4YI')
