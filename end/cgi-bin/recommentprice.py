@@ -3,7 +3,7 @@ from data import get_commodity_data
 #求平均价格，最新价格以及最低价格
 #传入商品的asin编码
 #返回平均价格，最新价格以及最低价格组成的数组
-def recommentprice(asin):
+def recommendprice(asin):
     price_list=[]
     result=[]
     r=0.0

@@ -6,6 +6,7 @@ import data
 import singleprice
 import singlecomment
 import singlestar
+#from recommentprice import recommendprice
 
 cgitb.enable()
 table = []
@@ -31,6 +32,7 @@ def getname(asin='B003YUC4YI'):
 	return name
 	
 def getprice(asin='B003YUC4YI'):
+	#return recommendprice(asin)[1]
 	return 100
 	
 def category(category,i):
@@ -54,7 +56,9 @@ def category(category,i):
 	body+='</div>'
 	body+='<div id="page">'
 	body+='<div id="page-bgtop">'
+	body+='<div style="width:920px;font-size:32px;margin:0px 0px 30px 20px;">'
 	body+=category
+	body+='</div>'
 	for each in data0:
 		asin=each['ASIN']
 		name = getname(asin)
@@ -66,7 +70,7 @@ def category(category,i):
 		body+='<a href="commodity.py?asin='+asin+'"><img src="' + imgurl + '" width="100px" height="100px" /></a>'
 		body+='</div>'
 		body+='<div class="info" style="width:600px;height:110px;float:left;margin:0px 20px 0px 20px;">'
-		body+='<div style="width:500px;font-size:18px;margin:10px 5px 20px 5px;">'+name+'</div>'
+		body+='<div style="width:560px;font-size:18px;margin:20px 5px 20px 10px;">'+name+'</div>'
 		body+='<div style="font-size:14px;margin:0px 50px 10px 20px;">$'+str(price)+'</div>'
 		body+='</div>'
 		body+='</div>'
