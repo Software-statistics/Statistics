@@ -96,9 +96,9 @@ def commodity0(content='nothing'):
 form=cgi.FieldStorage()
 asin=form.getvalue('asin')
 #asin='B003YUC4YI'
-addtable(singlestar.highchart(asin))
-addtable(singleprice.highchart(asin))
-addtable(singlecomment.highchart(asin))
+#addtable(singlestar.highchart(asin))
+#addtable(singleprice.highchart(asin))
+#addtable(singlecomment.highchart(asin))
 
 print ("HTTP/1.0 200 OK")
 print ("Content-Type: text/html")

@@ -61,13 +61,13 @@ def category(category,i):
 		price = getprice(asin)
 		imgurl = getimgurl(asin)
 		
-		body+='<div style="width:650px;height:110px">'
-		body+='<div class="pic" style="width:110px;height:110px;float:left; display:inline">'
+		body+='<div style="width:800px;height:110px;border:groove 2px grey;margin:5px 50px 5px 50px;">'
+		body+='<div class="pic" style="width:100px;height:100px;float:left;margin:5px 5px 5px 20px;">'
 		body+='<a href="commodity.py?asin='+asin+'"><img src="' + imgurl + '" width="100px" height="100px" /></a>'
 		body+='</div>'
-		body+='<div class="info" style="width:500px;height:110px;float:left; display:inline">'
-		body+='<div style="width:500px;">'+name+'</div>'
-		body+='<div>'+str(price)+'</div>'
+		body+='<div class="info" style="width:600px;height:110px;float:left;margin:0px 20px 0px 20px;">'
+		body+='<div style="width:500px;font-size:18px;margin:10px 5px 20px 5px;">'+name+'</div>'
+		body+='<div style="font-size:14px;margin:0px 50px 10px 20px;">$'+str(price)+'</div>'
 		body+='</div>'
 		body+='</div>'
 	body+='</div>'
@@ -82,8 +82,7 @@ second=form.getvalue('second')
 third=form.getvalue('third')
 category0=first+'>'+second+'>'+third
 #addtable(singlestar.highchart('B003YUC4YI'))
-#addtable(singleprice.highchart('B003YUC4YI'))
-#addtable(singlecomment.highchart('B003YUC4YI'))
+
 print ("HTTP/1.0 200 OK")
 print ("Content-Type: text/html")
 print ("")
