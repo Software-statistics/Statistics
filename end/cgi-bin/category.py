@@ -69,7 +69,7 @@ def category(category,i):
 	body+='<div style="width:500px;height:240px;margin:30px 0px 0px 0px;float:left;">'
 	body+='<div style="width:500px;height:30px;font-size:26px;margin:10px 0px 0px 20px;">most popular:</div>'
 	body+='<div style="width:190px;height:190px;float:left;margin:5px 5px 5px 5px;">'
-	body+='<a href="commodity.py?asin='+asin0+'"><img src="' + imgurl0 + '" width="190px" height="190px" /></a>'
+	body+='<a href="commodity.py?asin='+asin0+'&category='+category+'"><img src="' + imgurl0 + '" width="190px" height="190px" /></a>'
 	body+='</div>'
 	body+='<div style="width:300px;height:180px;float:left;margin:20px 0px 0px 0px;">'
 	body+='<div style="width:270px;font-size:18px;margin:20px 10px 20px 20px;">'+name0+'</div>'
@@ -87,7 +87,7 @@ def category(category,i):
 		
 		body+='<div style="width:800px;height:110px;border:groove 2px grey;margin:5px 50px 5px 50px;">'
 		body+='<div class="pic" style="width:100px;height:100px;float:left;margin:5px 5px 5px 20px;">'
-		body+='<a href="commodity.py?asin='+asin+'"><img src="' + imgurl + '" width="100px" height="100px" /></a>'
+		body+='<a href="commodity.py?asin='+asin+'&category='+category+'"><img src="' + imgurl + '" width="100px" height="100px" /></a>'
 		body+='</div>'
 		body+='<div class="info" style="width:600px;height:110px;float:left;margin:0px 20px 0px 20px;">'
 		body+='<div style="width:560px;font-size:18px;margin:20px 5px 20px 10px;">'+name+'</div>'
