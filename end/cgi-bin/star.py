@@ -10,19 +10,16 @@ from data import get_commodity_data
 # Parameters:asin
 # Return the number of the star
 def getstar(asin):
-
-        data = get_commodity_data(asin)
-        star=float(data['stats_info']['avg_info'])
-        result=str(star)
-        return result
+	data = get_commodity_data(asin)
+	star=float(data['stats_info']['avg_info'])
+	result=str(star)
+	return result
 
 def highchart(asin):
-        star = getstar(asin)
-#        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-#        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content='''<script>'''
-        content+='''$(function () {'''
-	content+='''$('#container').highcharts({'''
+	star = getstar(asin)
+	content='''<script>'''
+	content+='''$(function () {'''
+	content+='''$('#speedstar').highcharts({'''
 	content+='''chart: {'''
 	content+='''type: 'gauge','''
 	content+='''plotBackgroundColor: null,'''
@@ -127,12 +124,12 @@ def highchart(asin):
 	content+='''inc = 0;'''        
 	content+='''newVal = point.y + inc;'''
 	content+='''if (newVal < 0 || newVal > 200) {'''
-        content+='''newVal = point.y - inc;'''
+	content+='''newVal = point.y - inc;'''
 	content+='''}'''
 	content+='''point.update(newVal);'''  
 	content+='''}, 3000);'''
 	content+='''}'''
 	content+='''});'''
-        content+='''});'''
-        content+='''</script>'''
-        return content
+	content+='''});'''
+	content+='''</script>'''
+	return content

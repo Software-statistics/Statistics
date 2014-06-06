@@ -6,10 +6,11 @@ import data
 import singleprice
 import singlecomment
 import singlestar
+import star
 
 cgitb.enable()
 table = []
-	
+
 def addtable(table0):
 	table.append(table0)
 	
@@ -38,7 +39,7 @@ def commodity(asin):
 	head='<!DOCTYPE HTML>'
 	head+='<html><head>'
 	head+='<title>software statistics</title>'
-	head+='<link href="../css/commodity.css" rel="stylesheet" type="text/css" media="screen" />'
+	head+='<link href="../css/commodity.css" rel="stylesheet" type="text/css" />'
 	head+='''<script type="text/javascript" src="../jquery/jquery.min.js"></script>'''
 	head+='''<script type="text/javascript" src="../highcharts/highcharts.js"></script>'''
 	for each in table:
@@ -66,14 +67,11 @@ def commodity(asin):
 	body+='</tr>'
 	body+='<tr>'
 	body+='<td>'
-	body+='<ul>'
-	body+='<li>'
-	body+='<div id="price" class="div-inline"></div><div id="comment" class="div-inline"></div>'
-	body+='</li>'
-	body+='<li>'
-	body+='<div id="star"class="div-inline"></div>'
-	body+='</li>'
-	body+='</ul>'
+	
+	body+='<div id="speedstar"></div>'
+	body+='<div id="price"></div>'
+	body+='<div id="comment"></div>'
+	body+='<div id="star"></div>'
 	body+='</td>'
 	body+='</tr>'
 	body+='</table>'
@@ -93,15 +91,16 @@ def commodity0(content='nothing'):
 	body+='</html>'
 	return head+body
 
-#form=cgi.FieldStorage()
-#asin=form.getvalue('asin')
-asin='B003YUC4YI'
-#addtable(singlestar.highchart(asin))
-#addtable(singleprice.highchart(asin))
-#addtable(singlecomment.highchart(asin))
+form=cgi.FieldStorage()
+asin=form.getvalue('asin')
+#asin='B003YUC4YI'
+addtable(singlestar.highchart(asin))
+addtable(singleprice.highchart(asin))
+addtable(singlecomment.highchart(asin))
+addtable(star.highchart(asin))
 
 print ("HTTP/1.0 200 OK")
 print ("Content-Type: text/html")
 print ("")
 print ("")
-print (commodity0(asin))
+print (commodity(asin))

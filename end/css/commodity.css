@@ -64,14 +64,23 @@ hr { display: none; }
 }
 
 #price{
+	margin: 5px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
 }
 #comment{
+	margin: 5px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
 }
 #star{
+	margin: 5px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
+}
+
+#speedstar{
+	margin: 5px 0px 10px 100px;
+	height:400px;
+	width:600px;
 }

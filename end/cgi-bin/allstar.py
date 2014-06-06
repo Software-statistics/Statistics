@@ -49,9 +49,8 @@ def highchart(category):
         c=result.split('/')[2]
         d=result.split('/')[3]
         e=result.split('/')[4]
-        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content+='''<script>'''
+
+        content='''<script>'''
         content+='''$(function () {'''
         content+='''$('#allstar').highcharts({'''
         content+='''chart: {'''
@@ -101,5 +100,4 @@ def highchart(category):
         content+='''});'''
         content+='''});'''
         content+='''</script>'''
-        content+='''<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'''
         return content

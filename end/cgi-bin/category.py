@@ -3,10 +3,9 @@
 import cgi
 import cgitb
 import data
-import singleprice
-import singlecomment
-import singlestar
+import allstar
 import recommendprice
+import recommend_goods
 
 cgitb.enable()
 table = []
@@ -37,6 +36,8 @@ def getprice(asin='B003YUC4YI'):
 def category(category,i):
 	data0=data.get_category_page(category,i)
 	
+	recommend = recommend_goods.recommendcommodity(category)
+	
 	
 	head='<!DOCTYPE HTML>'
 	head+='<html><head>'
@@ -58,6 +59,26 @@ def category(category,i):
 	body+='<div style="width:920px;font-size:32px;margin:0px 0px 30px 20px;">'
 	body+=category
 	body+='</div>'
+	
+	asin0=recommend[0]
+	name0=getname(asin0)
+	price0 = getprice(asin0)
+	imgurl0 = getimgurl(asin0)
+	
+	body+='<div style="width:920px;height:300px;">'
+	body+='<div style="width:500px;height:240px;margin:30px 0px 0px 0px;float:left;">'
+	body+='<div style="width:500px;height:30px;font-size:26px;margin:10px 0px 0px 20px;">most popular:</div>'
+	body+='<div style="width:190px;height:190px;float:left;margin:5px 5px 5px 5px;">'
+	body+='<a href="commodity.py?asin='+asin0+'"><img src="' + imgurl0 + '" width="190px" height="190px" /></a>'
+	body+='</div>'
+	body+='<div style="width:300px;height:180px;float:left;margin:20px 0px 0px 0px;">'
+	body+='<div style="width:270px;font-size:18px;margin:20px 10px 20px 20px;">'+name0+'</div>'
+	body+='<div style="font-size:16px;margin:0px 0px 10px 40px;">$'+str(price0)+'</div>'
+	body+='</div>'
+	body+='</div>'
+	
+	body+='<div id="allstar" style="width:400px;height:300px;float:left;"></div>'
+	body+='</div>'	
 	for each in data0:
 		asin=each['ASIN']
 		name = getname(asin)
@@ -84,7 +105,7 @@ first=form.getvalue('first')
 second=form.getvalue('second')
 third=form.getvalue('third')
 category0=first+'>'+second+'>'+third
-#addtable(singlestar.highchart('B003YUC4YI'))
+addtable(allstar.highchart(category0))
 
 print ("HTTP/1.0 200 OK")
 print ("Content-Type: text/html")
