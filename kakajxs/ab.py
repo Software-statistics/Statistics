@@ -8,7 +8,7 @@ import singlecomment
 
 # Address
 HOST = ''
-PORT = 8000
+PORT = 8001
 
 # Configure socket
 s    = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -47,7 +47,7 @@ while True:
             pass
         html.addtable(star.highchart('B003YUC4YI'))
         #html.addtable(singlecomment.highchart('B003YUC4YI'))
-        #content = html.head() + html.body0('B003YUC4YI') + html.foot()
+        content = html.head() + html.body0('B003YUC4YI') + html.foot()
 
         value = entry[-1].split('=')[-1]
         
