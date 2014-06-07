@@ -10,19 +10,16 @@ from data import get_commodity_data
 # Parameters:asin
 # Return the number of the star
 def getstar(asin):
-
-        data = get_commodity_data(asin)
-        star=float(data['stats_info']['avg_info'])
-        result=str(star)
-        return result
+	data = get_commodity_data(asin)
+	star=float(data['stats_info']['avg_info'])
+	result=str(star)
+	return result
 
 def highchart(asin):
-        star = getstar(asin)
-#        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-#        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content='''<script>'''
-        content+='''$(function () {'''
-	content+='''$('#container').highcharts({'''
+	star = getstar(asin)
+	content='''<script>'''
+	content+='''$(function () {'''
+	content+='''$('#speedstar').highcharts({'''
 	content+='''chart: {'''
 	content+='''type: 'gauge','''
 	content+='''plotBackgroundColor: null,'''
@@ -57,7 +54,7 @@ def highchart(asin):
 	content+='''borderWidth: 1,'''
 	content+='''outerRadius: '107%' '''
 	content+='''}, {'''
-	content+='''// default background'''
+	content+=''''''
 	content+='''}, {'''
 	content+='''backgroundColor: '#DDD','''
 	content+='''borderWidth: 0,'''
@@ -65,7 +62,7 @@ def highchart(asin):
 	content+='''innerRadius: '103%' '''
 	content+='''}]'''
 	content+='''},'''
-	content+='''// the value axis'''
+	content+=''''''
 	content+='''yAxis: {'''
 	content+='''min: 0,'''
 	content+='''max: 5,'''
@@ -89,23 +86,23 @@ def highchart(asin):
 	content+='''plotBands: [{'''
 	content+='''from: 0,'''
 	content+='''to: 1,'''
-	content+='''color: '#55BF3B' // green'''
+	content+='''color: '#55BF3B' '''
 	content+='''}, {'''
 	content+='''from: 1,'''
 	content+='''to: 2,'''
-	content+='''color: '#DDDF0D' // yellow'''
+	content+='''color: '#DDDF0D' '''
 	content+='''}, {'''
 	content+='''from: 2,'''
 	content+='''to: 3,'''
-	content+='''color: '#DF5353' // red'''
+	content+='''color: '#DF5353' '''
 	content+='''}, {'''
 	content+='''from: 3,'''
 	content+='''to: 4,'''
-	content+='''color: '#DDDF0D' // yellow'''
+	content+='''color: '#DDDF0D' '''
 	content+='''}, {'''
 	content+='''from: 4,'''
 	content+='''to: 5,'''
-	content+='''color: '#55BF3B' // green'''
+	content+='''color: '#55BF3B' '''
 	content+='''}]'''
 	content+='''},'''
 	content+='''series: [{'''
@@ -118,7 +115,7 @@ def highchart(asin):
 	content+='''}'''
 	content+='''}]'''
 	content+='''}, '''
-	content+='''// Add some life'''
+	content+=''''''
 	content+='''function (chart) {'''
 	content+='''if (!chart.renderer.forExport) {'''
 	content+='''setInterval(function () {'''
@@ -127,12 +124,12 @@ def highchart(asin):
 	content+='''inc = 0;'''        
 	content+='''newVal = point.y + inc;'''
 	content+='''if (newVal < 0 || newVal > 200) {'''
-        content+='''newVal = point.y - inc;'''
+	content+='''newVal = point.y - inc;'''
 	content+='''}'''
 	content+='''point.update(newVal);'''  
 	content+='''}, 3000);'''
 	content+='''}'''
 	content+='''});'''
-        content+='''});'''
-        content+='''</script>'''
-        return content
+	content+='''});'''
+	content+='''</script>'''
+	return content

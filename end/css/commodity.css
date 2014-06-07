@@ -64,14 +64,42 @@ hr { display: none; }
 }
 
 #price{
+	margin: 10px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
 }
 #comment{
+	margin: 10px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
 }
 #star{
+	margin: 10px 0px 10px 100px;
 	height:400px;
-	width:500px;
+	width:600px;
+}
+
+#speedstar{
+	float:left;
+	margin: 0px 0px 0px 100px;
+	height:300px;
+	width:300px;
+}
+
+#recommendinfo{
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:920px;
+}
+#recommend0{
+	float:left;
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:200px;
+}
+#recommend1{
+	float:left;
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:200px;
 }

@@ -11,13 +11,20 @@ def getstar(asin):
         data = get_commodity_data(asin)
         star=float(data['stats_info']['avg_info'])
         result=str(star)
+        print result
         return result
 
 def highchart(asin):
         star = getstar(asin)
-#        content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
-#        content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
-        content='''<script>'''
+        print star
+        #content='''<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>'''
+        #content+='''<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>'''
+
+        content='''<script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/highcharts.js"></script>
+  <script type="text/javascript" src="js/exporting.js"></script>
+  <script type="text/javascript" src="js/highcharts-more.js"></script>'''
+        content+='''<script>'''
         content+='''$(function () {'''
 	content+='''$('#container').highcharts({'''
 	content+='''chart: {'''
@@ -102,7 +109,7 @@ def highchart(asin):
 	content+='''}, {'''
 	content+='''from: 4,'''
 	content+='''to: 5,'''
-	content+='''color: '#55BF3B' // green'''
+	content+='''color: '#55BF3B' '''
 	content+='''}]'''
 	content+='''},'''
 	content+='''series: [{'''
@@ -115,7 +122,7 @@ def highchart(asin):
 	content+='''}'''
 	content+='''}]'''
 	content+='''}, '''
-	content+='''// Add some life'''
+	#content+='''// Add some life'''
 	content+='''function (chart) {'''
 	content+='''if (!chart.renderer.forExport) {'''
 	content+='''setInterval(function () {'''
@@ -132,4 +139,6 @@ def highchart(asin):
 	content+='''});'''
         content+='''});'''
         content+='''</script>'''
+        print content
+        #content+='''<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'''
         return content
