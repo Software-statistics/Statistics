@@ -1,0 +1,105 @@
+
+#informations a:hover{
+	background-color:yellow;
+}
+
+#informations a:link{
+	text-decoration:none;
+}
+
+body {
+	margin: 0px;
+	padding: 0;
+	background: #F3F2ED url(../images/img04.jpg) repeat-x left top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #464646;
+}
+h1, h2, h3 {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: normal;
+	color: #549900;
+}
+
+h1 { font-size: 44px; }
+
+h2 { font-size: 18px; }
+
+h3 { }
+
+hr { display: none; }
+
+.div-inline{
+	display:inline
+}
+
+#logo{
+	width: 960px;
+	height: 107px;
+	margin: 0 auto;
+	padding: 10px 20px 0px 20px;
+	background: url(../images/img08.jpg) no-repeat left bottom;
+}
+#logo h1 {
+	margin: 0px;
+	line-height: normal;
+	text-transform: lowercase;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#page {
+	width: 1000px;
+	margin: 0px auto;
+	margin: 0 auto;
+	background: #FFFFFF url(../images/img06.jpg) repeat-y left 20px;
+}
+
+#page-bgtop {
+	width: 920px;
+	margin: 0px auto;
+	padding: 40px 40px 0px 40px;
+	background: url(../images/img05.jpg) no-repeat left top;
+}
+
+#price{
+	margin: 10px 0px 10px 100px;
+	height:400px;
+	width:600px;
+}
+#comment{
+	margin: 10px 0px 10px 100px;
+	height:400px;
+	width:600px;
+}
+#star{
+	margin: 10px 0px 10px 100px;
+	height:400px;
+	width:600px;
+}
+
+#speedstar{
+	float:left;
+	margin: 0px 0px 0px 100px;
+	height:300px;
+	width:300px;
+}
+
+#recommendinfo{
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:920px;
+}
+#recommend0{
+	float:left;
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:200px;
+}
+#recommend1{
+	float:left;
+	margin: 0px 0px 0px 0px;
+	height:300px;
+	width:200px;
+}

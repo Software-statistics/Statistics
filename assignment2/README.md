@@ -12,3 +12,5 @@ homework for Software Statistics
 Git：https://github.com/Software-statistics/Statistics.git
 
 先运行myserver.py,再进入浏览器进入相应地址
+
+这次的作业我们使用了highcharts，jQuery
